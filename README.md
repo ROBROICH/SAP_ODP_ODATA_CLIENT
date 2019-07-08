@@ -37,11 +37,24 @@ Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite fo
 
 The CDS-View customization is based on the blog of Maksim Alyapyshev. In this example sales document CDS views gets extended for data extraction. 
 
-#Extending the sales document CDS View I_SalesDocument
+#Extending the sales document CDS View “I_SalesDocument”
+
 Based on the example of Maksim’s blog the CDS view had to be slightly adjusted by commenting out some lines which prevented the CDS- view from being activated. 
 
-```json
-efine view ZRB_I_Salesdocument as select from I_SalesDocument {
+```
+@AbapCatalog.sqlViewName: 'ZRB_ISALESDOC_1'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'CDS for Extraction I_SalesDocument'
+@Analytics:{dataCategory:#DIMENSION ,
+            dataExtraction.enabled:true}
+@Analytics.dataExtraction.delta.byElement.name:'LastChangeDateTime'
+@Analytics.dataExtraction.delta.byElement.maxDelayInSeconds: 1800
+@VDM.viewType: #BASIC
+
+            
+
+define view ZRB_I_Salesdocument as select from I_SalesDocument {
 key SalesDocument,
 
       //Category
@@ -71,7 +84,6 @@ key SalesDocument,
       SalesDocumentCondition
     
 }   
-
 ```
 
 
