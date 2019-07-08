@@ -96,21 +96,21 @@ Currently only timestamp-based CDC-flags are supported by extraction-enabled CDS
 [HANA HASH_SHA256](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.01/en-US/d22ecca9d2951014850492e8c88d498c.html/) functions could be evaluated for delta calculation in addition to timestamps. 
 
 #Generating the ODATA service 
+
 After successfully activating the CDS-view for data-extraction, the OData service must be created.
 The required steps for activating the OData service are described in this documentation for the [ODP OData client]( https://help.sap.com/viewer/dd104a87ab9249968e6279e61378ff66/11.0.7/en-US/11853413cf124dde91925284133c007d.html) 
+
 Briefly summarized the following steps are required to create the service:
 *Transaction SEGW: Create project
-*Redefine model based on ODP extraction:
-Right click  “Data model” 
-![ Redefine model]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_1.png
-)
+
+*Redefine model based on ODP extraction: Right click --> “Data model” 
+![ Redefine model]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_1.png)
 
 * Search for technical name of SQL CDS view
-![ Select CDS view]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_2.png
-)
+![ Select CDS view]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_2.png)
+
 *Finish Wizard / Activate Service 
-![ Finish wizard]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_3.png
-)
+![ Finish wizard]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_3.png)
 
 
 
