@@ -129,7 +129,7 @@ The tests for the prototype will implement the following cases:
 4)	Update sales document in VA02 
 5)	Fetch updated record from delta queue 
 
-Check if the OData client is already subscribed to the ODP queue 
+* Check if the OData client is already subscribed to the ODP queue 
 ```
 URL: 
 /sap/opu/odata/sap/ZRB_ODP_ODATA_SRV_01/SubscribedToAttrOfZRB_ISALESDOC
@@ -140,7 +140,7 @@ SubscribedFlag:false
 Subscribe to the ODP queue and initialize the delta processing 
 ![Generate delta queue]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_6.png)
 
-Get the delta links 
+* Get the delta links 
 ```
 URL: 
 /sap/opu/odata/sap/ZRB_ODP_ODATA_SRV_01/DeltaLinksOfAttrOfZRB_ISALESDOC
@@ -149,10 +149,10 @@ DeltaLinksOfAttrOfZRB_ISALESDOC('D20190708134907_000128000')/ChangesAfter
 ```
 ![Get the delta links]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_7.png)
 
-Update sales document in VA02 
+* Update sales document in VA02 
 ![Update document in VA02]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_8.png)
 
-Fetch updated record from delta queue 
+* Fetch updated record from delta queue 
 ```
 URL: 
 /sap/opu/odata/sap/ZRB_ODP_ODATA_SRV_01/DeltaLinksOfAttrOfZRB_ISALESDOC/DeltaLinksOfAttrOfZRB_ISALESDOC('D20190708134907_000128000')/ChangesAfter
