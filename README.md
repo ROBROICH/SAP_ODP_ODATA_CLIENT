@@ -109,14 +109,11 @@ Briefly summarized the following steps are required to create the service:
 * Search for technical name of SQL CDS view
 ![ Select CDS view]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_2.png)
 
-* Finish Wizard / Activate Service 
-![ Finish wizard]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_3.jpg)
+* Finish Wizard 
+![Finish wizard]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_3.jpg)
 
-
-
-
-
-
+* Generate runtime object  
+![Generate runtime object]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_4.jpg)
 
 
 
