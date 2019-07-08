@@ -164,6 +164,7 @@ Further enhancements and improvements are required to fully implement the OData 
 
 Therefore, is intention of the document to be a starting point and inspiration to further implement and improve the described scenario. 
 
+Further references: [Requirements for the OData client]( https://help.sap.com/viewer/dd104a87ab9249968e6279e61378ff66/11.0.7/en-US/50f4ee6253134d3cafa25b9444f0c5a9.html) 
 
 
 
