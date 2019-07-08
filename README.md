@@ -40,6 +40,10 @@ The CDS-View customization is based on the blog of Maksim Alyapyshev. In this ex
 #Extending the sales document CDS View “I_SalesDocument”
 
 Based on the example of Maksim’s blog the CDS view had to be slightly adjusted by commenting out some lines which prevented the CDS- view from being activated. 
+The column 'LastChangeDateTime' is used as identifier for CDC. 
+Remark: 
+Currently only timestamp-based CDC-flags are supported by extraction-enabled CDS-views.
+[HANA HASH_SHA256](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.01/en-US/d22ecca9d2951014850492e8c88d498c.html/) functions could be evaluated for delta mechanisms in addition to timestamps. 
 
 ```
 @AbapCatalog.sqlViewName: 'ZRB_ISALESDOC_1'
