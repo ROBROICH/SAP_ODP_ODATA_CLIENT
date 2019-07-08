@@ -1,5 +1,5 @@
-# SAP Operational Data Provisioning(ODP) OData Client with S/4HANA: "Hello World"
-For data integration scenarios based on SAP S4/HANA source systems, the following requirements are mainly relevant for designing integration architectures:
+# ODP based data extraction from S/4HANA via OData 
+For data extraction scenarios from S/4HANA these requirements have typically to be met: 
 
 * Logical data models abstracting the complexity SAP source tables and corresponding columns
 * The data source must be delta-/CDC-enabled to avoid full delta loads 
@@ -8,10 +8,11 @@ For data integration scenarios based on SAP S4/HANA source systems, the followin
 * Support of transactional and master data 
 
 
-The updated ODP feature in SAP NW 7.5 is the main technology for achieving the requirements describe above. Further information: ([New ODP feature in SAP NetWeaver 7.5]( https://wiki.scn.sap.com/wiki/display/BI/New+ODP+feature+in+SAP+NetWeaver+7.5))
+The updated ODP-OData feature in SAP NW 7.5 is the enabling technology for achieving the requirements describe above. 
+Further references: ([New ODP feature in SAP NetWeaver 7.5]( https://wiki.scn.sap.com/wiki/display/BI/New+ODP+feature+in+SAP+NetWeaver+7.5))
 
 # High level scenario description and architecture 
-This tutorial will describe a scenario which mainly consists of the following implementation steps 
+This tutorial will describe a scenario which consists of the following implementation steps 
 1)	Extend an existing ABAP CDS view for data extraction
 2)	Expose the ABP CDS view as ODP-enabled ODATA service 
 3)	Implement a prototype ODATA client which subscribes to the delta queue. 
@@ -118,9 +119,9 @@ Briefly summarized the following steps are required to create the service:
 * Register service 
 ![Generate runtime object]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_5.png)
 
-[X] Done. Now the service can be tested using the Gateway client.
+[X] Done. Now the service can be tested using the NW Gateway ODATA-client.
 
-# Using the ODP OData service with the gateway client.
+# Using the ODP OData service with the gateway OData client.
 Via the transaction /IWFND/GW_CLIENT you will be able to test the generated service with the gateway client. 
 The tests for the prototype will implement the following cases:
 1)	Check if the OData client is already subscribed to the ODP queue 
@@ -155,7 +156,7 @@ DeltaLinksOfAttrOfZRB_ISALESDOC('D20190708134907_000128000')/ChangesAfter
 * Fetch updated record from delta queue 
 ```
 URL: 
-/sap/opu/odata/sap/ZRB_ODP_ODATA_SRV_01/DeltaLinksOfAttrOfZRB_ISALESDOC/DeltaLinksOfAttrOfZRB_ISALESDOC('D20190708134907_000128000')/ChangesAfter
+/sap/opu/odata/sap/ZRB_ODP_ODATA_SRV_01/DeltaLinksOfAttrOfZRB_ISALESDOC('D20190708134907_000128000')/ChangesAfter
 ```
 ![Updated record in ODP delta queue]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_9.png)
 
