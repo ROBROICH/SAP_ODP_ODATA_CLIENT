@@ -113,7 +113,7 @@ Briefly summarized the following steps are required to create the service:
 ![Finish wizard]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_3.jpg)
 
 * Generate runtime object  
-![Generate runtime object]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_4.jpg)
+![Generate runtime object]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_4.png)
 
 
 
