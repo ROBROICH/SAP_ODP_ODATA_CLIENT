@@ -157,6 +157,11 @@ URL:
 /sap/opu/odata/sap/ZRB_ODP_ODATA_SRV_01/DeltaLinksOfAttrOfZRB_ISALESDOC('D20190708134907_000128000')/ChangesAfter
 ```
 ![Updated record in ODP delta queue]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_9.png)
+# Summary
+This example implements the first basic interactions of the OData client with the ODP interface. 
+Further enhancements and improvements are required to fully implement the OData client and the lifecycle of data extraction processes. 
+Therefore, is intention of the document to be a starting point and inspiration to further implement and improve the described scenario. 
+
 
 
 
