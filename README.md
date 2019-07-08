@@ -10,7 +10,7 @@ For data extraction scenarios from S/4HANA the following requirements have typic
 * Supports the extraction of transactional and master data 
 
 The updated ODP-OData feature in SAP NW 7.5 is the enabling technology for achieving the requirements describe above. 
-Further references: ([New ODP feature in SAP NetWeaver 7.5]( https://wiki.scn.sap.com/wiki/display/BI/New+ODP+feature+in+SAP+NetWeaver+7.5))
+Further references: [New ODP feature in SAP NetWeaver 7.5]( https://wiki.scn.sap.com/wiki/display/BI/New+ODP+feature+in+SAP+NetWeaver+7.5)
 
 This document will describe the required step to enable the OData-based consumption of changed records in a SAP S/4HANA system. 
 
