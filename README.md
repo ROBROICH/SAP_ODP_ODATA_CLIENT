@@ -1,12 +1,11 @@
 # ODP based data extraction from S/4HANA via OData 
-For data extraction scenarios from S/4HANA these requirements have typically to be met: 
+For data extraction scenarios from S/4HANA the following requirements have typically to be met: 
 
 * Logical data models abstracting the complexity SAP source tables and corresponding columns
 * The data source must be delta-/CDC-enabled to avoid full delta loads 
 * Open interfaces and protocols to support the customer demand for cloud-based architectures. 
 * Support of frequent intraday data-loads instead of nightly batches
-* Support of transactional and master data 
-
+* Supports the extraction of transactional and master data 
 
 The updated ODP-OData feature in SAP NW 7.5 is the enabling technology for achieving the requirements describe above. 
 Further references: ([New ODP feature in SAP NetWeaver 7.5]( https://wiki.scn.sap.com/wiki/display/BI/New+ODP+feature+in+SAP+NetWeaver+7.5))
@@ -14,20 +13,18 @@ Further references: ([New ODP feature in SAP NetWeaver 7.5]( https://wiki.scn.sa
 # High level scenario description and architecture 
 This tutorial will describe a scenario which consists of the following implementation steps 
 1)	Extend an existing ABAP CDS view for data extraction
-2)	Expose the ABP CDS view as ODP-enabled ODATA service 
+2)	Expose the ABAP CDS view as ODP-enabled ODATA service 
 3)	Implement a prototype ODATA client which subscribes to the delta queue. 
 
 ![ High level scenario description]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_SCENARIO.PNG)
-To reimplement this scenario for education purposes, the S/4HANA fully activated appliance is recommended to be deployed on SAP CAL. 
-([S/4HANA fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/))
-Technically a S/4HANA system is the main building block for this scenario. 
-From a high-level perspective the S/4HANA implementation consists of the following main building blocks:
+To reimplement this scenario for education purposes, the S/4HANA fully activated appliance is recommended to be deployed on SAP CAL ([S/4HANA fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)). 
+From a high-level perspective the S/4HANA implementation consists of the following components:
 ![ High level architecture]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/HIGH_LEVEL_ARCHITECTURE.PNG)
 
 # ABAP Core Data Services (CDS) based data provisioning (ABAP CDS based ODP context)
-The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. With S/4HANA the extraction technology was updated and utilizes SAP HANA virtual data models for data extraction. 
-Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite for this tutorial and these wiki and blogs are a good starting point:
-
+The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. The API utilized for providing these data extraction functionalities is referenced as Operational Data Provisioning (ODP)
+With S/4HANA and NW 7.5 the ODP technology was updated and has to option to leverage SAP HANA virtual data models(CDS-Views) for data extraction. 
+Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite for this tutorial and this wiki and blogs are a good starting point:
 [Operational Data Provisioning (ODP) and Delta Queue (ODQ)]( https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449284646)
 
 [Data Provisioning Supportability of SAP S/4HANA On-Premise Edition 1709
@@ -36,15 +33,12 @@ Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite fo
 [How to create delta-enabled BW DataSource based ABAP CDS views
 ]( https://blogs.sap.com/2017/03/17/how-to-create-delta-enabled-bw-datasource-based-abap-cds-views/)
 
-The CDS-View customization is based on the blog of Maksim Alyapyshev. In this example sales document CDS views gets extended for data extraction. 
+The shown CDS-View customization is based on the blog of Maksim Alyapyshev. In his example the sales document CDS views(I_SalesDocument) gets extended for data extraction. 
 
 # Extending the sales document CDS View “I_SalesDocument”
 
 Based on the example of Maksim’s blog the CDS view had to be slightly adjusted by commenting out some lines which prevented the CDS- view from being activated. 
-The column 'LastChangeDateTime' is used as identifier for CDC. 
-Remark: 
-Currently only timestamp-based CDC-flags are supported by extraction-enabled CDS-views.
-[HANA HASH_SHA256](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.01/en-US/d22ecca9d2951014850492e8c88d498c.html/) functions could be evaluated for delta calculation in addition to timestamps. 
+The column 'LastChangeDateTime' is used as timestamp based identifier for CDC. 
 
 ```
 @AbapCatalog.sqlViewName: 'ZRB_ISALESDOC_1'
