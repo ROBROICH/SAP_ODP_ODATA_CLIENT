@@ -16,7 +16,7 @@ This tutorial will describe a scenario which mainly consists of the following im
 
 ![ High level scenario description]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_SCENARIO.PNG)
 To reimplement this scenario for education purposes, the S/4HANA fully activated appliance is recommended to be deployed on SAP CAL. 
-(S/4HANA fully activated appliance]( https://blogs.sap.com/2017/12/14/sap-s4hana-1709-fully-activated-appliance-create-your-sap-s4hana-1709-system-in-a-fraction-of-the-usual-setup-time/))
+([S/4HANA fully activated appliance]( https://blogs.sap.com/2017/12/14/sap-s4hana-1709-fully-activated-appliance-create-your-sap-s4hana-1709-system-in-a-fraction-of-the-usual-setup-time/))
 
 Technically a S/4HANA system is the main building block for this scenario. 
 From a high-level perspective the S/4HANA implementation consists of the following main building blocks:
