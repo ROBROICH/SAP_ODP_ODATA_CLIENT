@@ -18,7 +18,7 @@ This tutorial will describe a scenario which mainly consists of the following im
 
 ![ High level scenario description]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_SCENARIO.PNG)
 To reimplement this scenario for education purposes, the S/4HANA fully activated appliance is recommended to be deployed on SAP CAL. 
-([S/4HANA fully activated appliance]( https://blogs.sap.com/2017/12/14/sap-s4hana-1709-fully-activated-appliance-create-your-sap-s4hana-1709-system-in-a-fraction-of-the-usual-setup-time/))
+([S/4HANA fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/))
 Technically a S/4HANA system is the main building block for this scenario. 
 From a high-level perspective the S/4HANA implementation consists of the following main building blocks:
 ![ High level architecture]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/HIGH_LEVEL_ARCHITECTURE.PNG)
@@ -27,15 +27,56 @@ From a high-level perspective the S/4HANA implementation consists of the followi
 The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. With S/4HANA the extraction technology was updated and utilizes SAP HANA virtual data models for data extraction. 
 Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite for this tutorial and this wiki and blogs are a good starting point:
 
-*[Operational Data Provisioning (ODP) and Delta Queue (ODQ)]( https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449284646)
+[Operational Data Provisioning (ODP) and Delta Queue (ODQ)]( https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449284646)
 
-*[Data Provisioning Supportability of SAP S/4HANA On-Premise Edition 1709
+[Data Provisioning Supportability of SAP S/4HANA On-Premise Edition 1709
 ](https://blogs.sap.com/2016/07/07/data-extraction-supportability-of-sap-s4hana-on-premise-edition-1511-fps02/)
 
-*[How to create delta-enabled BW DataSource based ABAP CDS views
+[How to create delta-enabled BW DataSource based ABAP CDS views
 ]( https://blogs.sap.com/2017/03/17/how-to-create-delta-enabled-bw-datasource-based-abap-cds-views/)
 
-The CDS-View customization is based on the blog of Maksim Alyapyshev. The sales document CDS views gets extended for data extraction. 
+The CDS-View customization is based on the blog of Maksim Alyapyshev. In this example sales document CDS views gets extended for data extraction. 
+
+#Extending the sales document CDS View I_SalesDocument
+Based on the example of Maksim’s blog the CDS view had to be slightly adjusted by commenting out some lines which prevented the CDS- view from being activated. 
+
+```json
+efine view ZRB_I_Salesdocument as select from I_SalesDocument {
+key SalesDocument,
+
+      //Category
+      SDDocumentCategory,
+      SalesDocumentType,
+      SalesDocumentProcessingType,
+
+      CreationDate,
+      CreationTime,
+      LastChangeDate,
+     //@Semantics.systemDate.lastChangedAt: true
+     LastChangeDateTime,
+
+      //Organization
+      SalesOrganization,
+      DistributionChannel,
+      OrganizationDivision,
+      SalesGroup,
+      SalesOffice,
+      
+      //Pricing
+      //TotalNetAmount,
+      TransactionCurrency,
+      PricingDate,
+      RetailPromotion,
+      //PriceDetnExchangeRate,
+      SalesDocumentCondition
+    
+}   
+
+```
+
+
+
+
 
 
 
