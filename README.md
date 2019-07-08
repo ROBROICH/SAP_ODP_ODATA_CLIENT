@@ -118,4 +118,29 @@ Briefly summarized the following steps are required to create the service:
 * Register service 
 ![Generate runtime object]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_5.png)
 
+[X] Done. Now the service can be tested using the Gateway client.
+
+# Using the ODP OData service with the gateway client.
+Via the transaction /IWFND/GW_CLIENT you will be able to test the generated service with the gateway client. 
+The tests for the prototype will implement the following cases:
+1)	Check if the OData client is already subscribed to the ODP queue 
+2)	Subscribe to the ODP queue and initialize the delta processing 
+3)	Get delta links
+4)	Update sales document in VA02 
+5)	Fetch updated record from delta queue 
+
+# Check if the OData client is already subscribed to the ODP queue 
+```
+URL: 
+/sap/opu/odata/sap/ZRB_ODP_ODATA_SRV_01/SubscribedToAttrOfZRB_ISALESDOC
+Result: 
+SubscribedFlag:false
+```
+
+# Subscribe to the ODP queue and initialize the delta processing 
+![Generate delta queue]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_6.png)
+
+
+
+
 
