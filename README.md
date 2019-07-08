@@ -24,9 +24,8 @@ From a high-level perspective the S/4HANA implementation consists of the followi
 ![ High level architecture]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/HIGH_LEVEL_ARCHITECTURE.PNG)
 
 # ABAP Core Data Services (CDS) based data provisioning (ABAP CDS based ODP context)
-The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. With S/4HANA the extraction technology was updated and utilizes virtual models for data extraction. 
+The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. With S/4HANA the extraction technology was updated and utilizes SAP HANA virtual data models for data extraction. 
 Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite for this tutorial and this wiki and blogs are a good starting point:
-
 ([Operational Data Provisioning (ODP) and Delta Queue (ODQ)]( https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449284646))
 
 ([Data Provisioning Supportability of SAP S/4HANA On-Premise Edition 1709
@@ -34,6 +33,11 @@ Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite fo
 
 ([How to create delta-enabled BW DataSource based ABAP CDS views
 ]( https://blogs.sap.com/2017/03/17/how-to-create-delta-enabled-bw-datasource-based-abap-cds-views/))
+
+The CDS-View customization is based on the blog of Maksim Alyapyshev. The sales document CDS views gets extended for data extraction. 
+
+
+
 
 
 
