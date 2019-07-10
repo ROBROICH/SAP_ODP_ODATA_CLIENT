@@ -20,7 +20,7 @@ This tutorial will describe a scenario which consists of the following implement
 2)	Expose the ABAP CDS view as ODP-enabled ODATA service 
 3)	Implement a prototype ODATA client which subscribes to the delta queue. 
 
-![ High level scenario description]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_SCENARIO.PNG)
+![ High level scenario description]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_SCENARIO.jpg)
 To reimplement this scenario for education purposes, the S/4HANA fully activated appliance is recommended to be deployed on SAP CAL ([S/4HANA fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)). 
 From a high-level perspective the S/4HANA implementation consists of the following components:
 ![ High level architecture]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/HIGH_LEVEL_ARCHITECTURE.PNG)
@@ -29,6 +29,7 @@ From a high-level perspective the S/4HANA implementation consists of the followi
 The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. The API utilized for providing these data extraction functionalities is referenced as Operational Data Provisioning (ODP)
 With S/4HANA and NW 7.5 the ODP technology was updated and has to option to leverage SAP HANA virtual data models(CDS-Views) for data extraction. 
 Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite for this tutorial and this wiki and blogs are a good starting point:
+
 [Operational Data Provisioning (ODP) and Delta Queue (ODQ)]( https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449284646)
 
 [Data Provisioning Supportability of SAP S/4HANA On-Premise Edition 1709
@@ -136,7 +137,16 @@ Result:
 SubscribedFlag:false
 ```
 
-Subscribe to the ODP queue and initialize the delta processing 
+*Subscribe to the ODP queue and initialize the delta processing 
+Initialize delta processing by setting the HTTP header: “Prefer/odata.track-changes”
+, then the delta queue gets associated with the authenticated user. 
+```
+URL: /sap/opu/odata/SAP/ZRB_ODP_ODATA_SRV_01/AttrOfZRB_ISALESDOC?
+Set HTTP header values: Prefer/odata.track-changes
+```
+
+
+
 ![Generate delta queue]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_6.png)
 
 * Get the delta links 
