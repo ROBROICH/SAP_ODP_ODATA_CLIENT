@@ -26,8 +26,8 @@ From a high-level perspective the S/4HANA implementation consists of the followi
 ![ High level architecture]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/HIGH_LEVEL_ARCHITECTURE.PNG)
 
 # ABAP Core Data Services (CDS) based data provisioning (ABAP CDS based ODP context)
-The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. The API utilized for providing these data extraction functionalities is referenced as Operational Data Provisioning (ODP)
-With S/4HANA and NW 7.5 the ODP technology was updated and has to option to leverage SAP HANA virtual data models(CDS-Views) for data extraction. 
+The data provisioning mechanism used in this tutorial is typically known as SAP BW extractors or SAP BW business content extractors. The API utilized for providing these data extraction functionalities is referenced as Operational Data Provisioning (ODP). 
+With S/4HANA and NW 7.5 the ODP technology was updated and has now to option to leverage SAP HANA virtual data models(CDS-Views) for data extraction in combination with OData. This approach applicable for S4/HANA public cloud too. 
 Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite for this tutorial and this wiki and blogs are a good starting point:
 
 [Operational Data Provisioning (ODP) and Delta Queue (ODQ)]( https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449284646)
@@ -137,7 +137,7 @@ Result:
 SubscribedFlag:false
 ```
 
-*Subscribe to the ODP queue and initialize the delta processing 
+*  Subscribe to the ODP queue and initialize the delta processing 
 Initialize delta processing by setting the HTTP header: “Prefer/odata.track-changes”
 , then the delta queue gets associated with the authenticated user. 
 ```
