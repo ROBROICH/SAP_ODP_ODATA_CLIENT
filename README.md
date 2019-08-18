@@ -90,6 +90,12 @@ key SalesDocument,
 }   
 ```
 
+This HANA SQL statement can be used to identify extraction enabled CDS-Views:
+```
+SELECT * from CDSVIEWANNOPOS WHERE 
+ANNOTATIONNAME = 'ANALYTICS.DATAEXTRACTION.ENABLED'
+```
+
 
 Remark: 
 Currently only timestamp-based CDC-flags are supported by extraction-enabled CDS-views.
@@ -144,7 +150,6 @@ Initialize delta processing by setting the HTTP header: “Prefer/odata.track-ch
 URL: /sap/opu/odata/SAP/ZRB_ODP_ODATA_SRV_01/AttrOfZRB_ISALESDOC?
 Set HTTP header values: Prefer/odata.track-changes
 ```
-
 
 
 ![Generate delta queue]( https://github.com/ROBROICH/SAP_ODP_ODATA_CLIENT/blob/master/ODP_CREATE_MODEL_6.png)
