@@ -175,6 +175,14 @@ Further enhancements and improvements are required to fully implement the OData 
 Therefore, is intention of the document to be a starting point and inspiration to further implement and improve the described scenario. 
 
 Further references: [Requirements for the OData client]( https://help.sap.com/viewer/dd104a87ab9249968e6279e61378ff66/11.0.7/en-US/50f4ee6253134d3cafa25b9444f0c5a9.html) 
+[How to use ABAP CDS for Data Provisioning in BW](https://www.sap.com/documents/2017/06/50b7535e-bf7c-0010-82c7-eda71af511fa.html) 
+[SAP S/4HANA and SAP Analytics (Focus on SAP Analytics Cloud): Where to Do What?](
+https://blog.asug.com/hubfs/2019%20AC%20Slide%20Decks%20Thursday/ASUG82186%20-%20SAP%20S4HANA%20and%20SAP%20Analytics%20(Focus%20on%20SAP%20Analytics%20Cloud)%20Where%20to%20Do%20What.pdf) 
+
+
+
+
+
 
 
 
