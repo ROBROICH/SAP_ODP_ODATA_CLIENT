@@ -38,8 +38,6 @@ Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite fo
 [How to create delta-enabled BW DataSource based ABAP CDS views
 ]( https://blogs.sap.com/2017/03/17/how-to-create-delta-enabled-bw-datasource-based-abap-cds-views/)
 
-[2550286 - Unable to register service in SEGW Transaction
-]( https://launchpad.support.sap.com/#/notes/2550286)
 
 The shown CDS-View customization is based on the blog of Maksim Alyapyshev. In his example the sales document CDS views(I_SalesDocument) gets extended for data extraction. 
 
@@ -108,6 +106,9 @@ Currently only timestamp-based CDC-flags are supported by extraction-enabled CDS
 
 After successfully activating the CDS-view for data-extraction, the OData service must be created.
 The required steps for activating the OData service are described in this documentation for the [ODP OData client]( https://help.sap.com/viewer/dd104a87ab9249968e6279e61378ff66/11.0.7/en-US/11853413cf124dde91925284133c007d.html) 
+
+[2550286 - Unable to register service in SEGW Transaction
+]( https://launchpad.support.sap.com/#/notes/2550286)
 
 Briefly summarized the following steps are required to create the service:
 * Transaction SEGW: Create project
