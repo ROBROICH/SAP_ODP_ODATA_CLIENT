@@ -38,6 +38,9 @@ Some fundamentals regarding ABAP CDS based ODP-extraction is the prerequisite fo
 [How to create delta-enabled BW DataSource based ABAP CDS views
 ]( https://blogs.sap.com/2017/03/17/how-to-create-delta-enabled-bw-datasource-based-abap-cds-views/)
 
+[2550286 - Unable to register service in SEGW Transaction
+]( https://launchpad.support.sap.com/#/notes/2550286)
+
 The shown CDS-View customization is based on the blog of Maksim Alyapyshev. In his example the sales document CDS views(I_SalesDocument) gets extended for data extraction. 
 
 # Extending the sales document CDS View “I_SalesDocument”
