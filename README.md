@@ -1,4 +1,4 @@
-# ODP based data extraction from S/4HANA via OData 
+# ODP based data extraction from S/4HANA via OData client
 
 # Introduction 
 For data extraction scenarios from S/4HANA the following requirements have typically to be met: 
